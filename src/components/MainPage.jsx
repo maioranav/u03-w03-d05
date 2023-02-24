@@ -25,13 +25,19 @@ export const MainPage = () => {
         let songInfo = result.data;
         switch (genere) {
           case "rock":
-            setRock(rockalbums.concat(songInfo[0]));
+            setRock((prevState) => {
+              return [...prevState, songInfo[0]];
+            });
             break;
           case "pop":
-            setPop([...popalbums, songInfo[0]]);
+            setPop((prevState) => {
+              return [...prevState, songInfo[0]];
+            });
             break;
           case "hiphop":
-            setHiphop([...hiphopalbums, songInfo[0]]);
+            setHiphop((prevState) => {
+              return [...prevState, songInfo[0]];
+            });
             break;
           default:
             console.log("switcherror");
