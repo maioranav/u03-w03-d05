@@ -1,7 +1,10 @@
 import { Container, Row } from 'react-bootstrap';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
+import { AlbumPage } from './components/AlbumPage';
+import { ArtistPage } from './components/ArtistPage';
 import { CustFooter } from './components/CustFooter';
+import { MainPage } from './components/MainPage';
 import { SideBar } from './components/SideBar';
 
 const App = () => {
@@ -11,7 +14,11 @@ const App = () => {
       <Container fluid>
         <Row>
           <SideBar />
-
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="album/:albumID" element={<AlbumPage />} />
+            <Route path="artist/:artistID" element={<ArtistPage />} />
+          </Routes>
         </Row>
       </Container>
       <CustFooter />
