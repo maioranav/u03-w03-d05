@@ -26,10 +26,10 @@ export const SideBar = () => {
               <div className="navbar-nav">
                 <ul>
                   <li>
-                    <a className="nav-item nav-link" href="index.html">
+                    <Link className="nav-item nav-link" href="/">
                       <FaHome />
                       &nbsp; Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a className="nav-item nav-link" href="#">
