@@ -32,10 +32,10 @@ export const SideBar = () => {
                     </Link>
                   </li>
                   <li>
-                    <a className="nav-item nav-link" href="#">
+                    <Link className="nav-item nav-link" to="/">
                       <FaBookOpen />
                       &nbsp; Your Library
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <div className="input-group mt-3">
@@ -66,7 +66,7 @@ export const SideBar = () => {
             <Button className="login-btn" type="button">
               Login
             </Button>
-            <a href="#">Cookie Policy</a> |<a href="#"> Privacy</a>
+            <Link to="/">Cookie Policy</Link> | <Link to="/">Privacy</Link>
           </div>
         </Navbar>
       </Col>
