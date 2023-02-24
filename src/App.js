@@ -1,11 +1,21 @@
+import { Container, Row } from 'react-bootstrap';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
+import { SideBar } from './components/SideBar';
 
-function App() {
+const App = () => {
+  // const isLoading = useSelector(state => state.books.isLoading);
   return (
-    <div className="App">
+    <BrowserRouter>
+      <Container fluid>
+        <Row>
+          <SideBar />
 
-    </div>
+        </Row>
+      </Container>
+
+    </BrowserRouter >
   );
-}
+};
 
 export default App;
