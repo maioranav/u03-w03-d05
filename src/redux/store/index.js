@@ -5,8 +5,8 @@ import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { encryptTransform } from "redux-persist-transform-encrypt";
 
-// import mainReducer from "../reducers";
-import playerReducer from "../reducers/playerReducer";
+import homeReducer from "../reducers/homeReducer";
+import searchReducer from "../reducers/searchReducer";
 
 const persistConfig = {
   key: "root",
@@ -22,7 +22,8 @@ const persistConfig = {
 // con combineReducer riportiamo le sezioni (slices) in un'unico macro oggetto globale
 // prima di passarlo allo store
 const rootReducer = combineReducers({
-  player: playerReducer,
+  home: homeReducer,
+  search: searchReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

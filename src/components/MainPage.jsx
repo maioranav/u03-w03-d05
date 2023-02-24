@@ -1,8 +1,11 @@
+import { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { fetchData, FOUND_DATA } from "../redux/actions";
 import { TopLinks } from "./TopLinks";
 
-export const MainPage = () => (
-  <>
+export const MainPage = () => {
+  return (
     <Col xs={12} md={9} className="offset-md-3 mainPage">
       <TopLinks />
       <Row>
@@ -30,5 +33,5 @@ export const MainPage = () => (
         </Col>
       </Row>
     </Col>
-  </>
-);
+  );
+};

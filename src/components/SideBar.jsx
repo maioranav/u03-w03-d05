@@ -1,8 +1,15 @@
 import { Button, Col, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBookOpen, FaHome } from "react-icons/fa";
 
 export const SideBar = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    let searchValue = document.querySelector("#searchField");
+    navigate(`/search/${searchValue.value}`);
+  };
+
   return (
     <>
       <Col xs={2}>
@@ -48,7 +55,7 @@ export const SideBar = () => {
                         aria-describedby="basic-addon2"
                       />
                       <div className="input-group-append" style={{ marginBottom: "4%" }}>
-                        <Button className="btn btn-outline-secondary btn-sm btn-dark" type="button" id="button-addon1">
+                        <Button className="btn btn-outline-secondary btn-sm btn-dark" type="button" id="button-addon1" onClick={handleClick}>
                           GO
                         </Button>
                       </div>
