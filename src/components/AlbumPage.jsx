@@ -1,18 +1,11 @@
 import { Col, Row } from "react-bootstrap";
+import { TopLinks } from "./TopLinks";
 
 export const AlbumPage = () => {
   return (
     <>
       <Col xs={12} md={9} className="offset-md-3 mainPage">
-        <Row className="mb-3">
-          <Col xs={9} lg={11} className="mainLinks d-none d-md-flex">
-            <a href="#">TRENDING</a>
-            <a href="#">PODCAST</a>
-            <a href="#">MOODS AND GENRES</a>
-            <a href="#">NEW RELEASES</a>
-            <a href="#">DISCOVER</a>
-          </Col>
-        </Row>
+        <TopLinks />
         <Row>
           <Col md={3} className="pt-5 text-center" id="img-container"></Col>
           <Col md={8} className="p-5">
