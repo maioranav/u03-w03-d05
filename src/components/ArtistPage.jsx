@@ -1,7 +1,19 @@
+import { useEffect } from "react";
 import { Button, Col, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { fetchByID } from "../redux/actions";
 import { TopLinks } from "./TopLinks";
 
 export const ArtistPage = () => {
+  const dispatch = useDispatch();
+  const params = useParams();
+  const artistDetails = useSelector((state) => state.artist.artistres);
+
+  useEffect(() => {
+    dispatch(fetchByID(params.artistID, "artist"));
+  }, [params.artistID]);
+
   return (
     <>
       <Col className="col-12 col-md-9 offset-md-3 mainPage">
