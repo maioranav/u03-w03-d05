@@ -60,6 +60,7 @@ export const fetchByID = (query, type) => {
             let result = await response.json() // transforms the response to json
             let songInfo = result
             type === "artist" ? dispatch({ type: ARTIST_FETCHED, payload: songInfo }) : dispatch({ type: ALBUM_FETCHED, payload: songInfo })
+            if (type === "artist") { fetchData(songInfo.name) }
          } else {
             console.log('error')
          }
