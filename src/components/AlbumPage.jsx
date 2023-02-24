@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { fetchByID } from "../redux/actions";
+import { fetchByID, SETPLAYER } from "../redux/actions";
 import { AlbumCover } from "./AlbumCover";
 import { TopLinks } from "./TopLinks";
 
@@ -27,7 +27,13 @@ export const AlbumPage = () => {
             <Row>
               <Col md={10} className="mb-5" id="trackList">
                 {albumDetails.tracks.data.map((track) => (
-                  <div className="py-3 trackHover" key={track.id}>
+                  <div
+                    className="py-3 trackHover"
+                    key={track.id}
+                    onClick={() => {
+                      dispatch({ type: SETPLAYER, payload: { artist: albumDetails.artist.name, title: track.title, id: track.id } });
+                    }}
+                  >
                     <Link to="#" className="card-title trackHover px-3" style={{ color: "white" }}>
                       {track.title}
                     </Link>

@@ -9,6 +9,8 @@ import homeReducer from "../reducers/homeReducer";
 import searchReducer from "../reducers/searchReducer";
 import albumReducer from "../reducers/albumReducer";
 import artistReducer from "../reducers/artistReducer"
+import playerReducer from "../reducers/playerReducer";
+import favReducer from "../reducers/favReducer";
 
 const persistConfig = {
   key: "root",
@@ -27,7 +29,9 @@ const rootReducer = combineReducers({
   home: homeReducer,
   search: searchReducer,
   album: albumReducer,
-  artist: artistReducer
+  artist: artistReducer,
+  player: playerReducer,
+  favs: favReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

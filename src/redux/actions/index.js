@@ -2,6 +2,10 @@ export const RENDER_HOME = "RENDER_HOME";
 export const FOUND_DATA = "FOUND_DATA";
 export const ARTIST_FETCHED = "ARTIST_FETCHED"
 export const ALBUM_FETCHED = "ALBUM_FETCHED"
+export const SETPLAYER = "SETPLAYER"
+export const ADD_FAV = "ADD_FAV"
+export const REMOVE_FAV = "REMOVE_FAV"
+
 
 export const fetchData = (query) => {
 

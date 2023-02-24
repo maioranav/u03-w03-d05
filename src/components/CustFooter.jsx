@@ -1,13 +1,25 @@
 import { Col, Container, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 export const CustFooter = () => {
+  const currentPlaying = useSelector((state) => state.player);
+
   return (
     <>
       <Container fluid className="fixed-bottom bg-container pt-1">
         <Row>
           <Col lg={10} className="offset-lg-2">
             <Row>
-              <Col xs={6} md={4} lg={2} className="offset-3 offset-md-4 offset-lg-5 playerControls mt-1">
+              <Col xs={6} md={4} lg={4} className="offset-3 offset-md-4 offset-lg-4 playerControls mt-1">
+                <Row>
+                  {currentPlaying.id && (
+                    <>
+                      <h6 className="text-light text-center w-100">
+                        {currentPlaying.title} - {currentPlaying.artist}
+                      </h6>
+                    </>
+                  )}
+                </Row>
                 <Row>
                   <a href="#">
                     <img src="playerbuttons/Shuffle.png" alt="shuffle" />
