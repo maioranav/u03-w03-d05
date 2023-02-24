@@ -8,9 +8,14 @@ const initialState = {
 const favReducer = (state = initialState, action) => {
    switch (action.type) {
       case ADD_FAV:
-         return state;
+         if (state.favs?.find((el) => el === action.payload)) {
+            return state
+         }
+         else {
+            return { ...state, favs: [...state.favs, action.payload] }
+         };
       case REMOVE_FAV:
-         return state;
+         return { ...state, favs: state.favs?.filter(el => el !== action.payload) };
       default:
          return state;
    }

@@ -3,7 +3,7 @@ import { SETPLAYER } from "../actions";
 const initialState = {
    artist: "",
    track: "",
-   id: ""
+   id: 0
 };
 
 const playerReducer = (state = initialState, action) => {

@@ -26,7 +26,7 @@ export const AlbumPage = () => {
           <Col md={8} className="p-5">
             <Row>
               <Col md={10} className="mb-5" id="trackList">
-                {albumDetails.tracks.data.map((track) => (
+                {albumDetails.tracks?.data.map((track) => (
                   <div
                     className="py-3 trackHover"
                     key={track.id}

@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { FavSwitcher } from "./FavSwitcher";
 
 export const CustFooter = () => {
   const currentPlaying = useSelector((state) => state.player);
@@ -15,7 +16,7 @@ export const CustFooter = () => {
                   {currentPlaying.id && (
                     <>
                       <h6 className="text-light text-center w-100">
-                        {currentPlaying.title} - {currentPlaying.artist}
+                        {currentPlaying.title} - {currentPlaying.artist} <FavSwitcher id={currentPlaying.id} />
                       </h6>
                     </>
                   )}

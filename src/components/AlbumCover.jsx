@@ -8,7 +8,7 @@ export const AlbumCover = (props) => {
         <p className="album-title">{props.albumDetails.title}</p>
       </div>
       <div className="text-center">
-        <p className="artist-name">{props.albumDetails.artist.name}</p>
+        <p className="artist-name">{props.albumDetails.artist?.name}</p>
       </div>
       <div className="mt-4 text-center">
         <Button id="btnPlay" className="btn-success" type="button">
