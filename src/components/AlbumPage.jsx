@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { fetchByID, SETPLAYER } from "../redux/actions";
 import { AlbumCover } from "./AlbumCover";
+import { FavSwitcher } from "./FavSwitcher";
 import { TopLinks } from "./TopLinks";
 
 export const AlbumPage = () => {
@@ -41,6 +42,7 @@ export const AlbumPage = () => {
                       {Math.floor(parseInt(track.duration) / 60)} :{" "}
                       {parseInt(track.duration) % 60 < 10 ? "0" + (parseInt(track.duration) % 60) : parseInt(track.duration) % 60}
                     </small>
+                    <FavSwitcher id={track.id} />
                   </div>
                 ))}
               </Col>

@@ -7,7 +7,7 @@ export const FavSwitcher = (props) => {
   const dispatch = useDispatch();
 
   return (
-    <>
+    <span style={{ color: "white" }}>
       {favourites.find((el) => el === props.id) ? (
         <AiFillHeart
           onClick={() => {
@@ -21,6 +21,6 @@ export const FavSwitcher = (props) => {
           }}
         />
       )}
-    </>
+    </span>
   );
 };
